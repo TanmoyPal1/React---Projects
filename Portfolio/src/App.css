@@ -18,7 +18,7 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-  background: radial-gradient(circle at top, #3c4869, #202e6c 60%);
+  background: linear-gradient(to right, rgb(8, 57, 141), rgb(31, 16, 92));
   color: var(--text);
   scroll-behavior: smooth;
 }
