@@ -1,0 +1,477 @@
+:root {
+  --bg: #050816;
+  --bg-alt: #0f172a;
+  --accent: #6366f1;
+  --accent-soft: rgba(99, 102, 241, 0.15);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --card: #020617;
+  --border: #1f2937;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.8);
+  --shadow-card: 0 14px 40px rgba(15, 23, 42, 0.7);
+}
+
+
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  background: radial-gradient(circle at top, #3c4869, #202e6c 60%);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #f9fafb;
+  box-shadow: 0 18px 45px rgba(79, 70, 229, 0.65);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 55px rgba(79, 70, 229, 0.9);
+}
+
+.btn.primary1 {
+  background: linear-gradient(135deg, #63dcf1, #5cf4f6);
+  color: #020202;
+  box-shadow: 0 18px 45px rgba(70, 208, 229, 0.65);
+}
+
+.btn.primary1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 55px rgba(70, 229, 226, 0.9);
+}
+.btn.ghost {
+  background: transparent;
+  border-color: rgba(148, 163, 184, 0.4);
+  color: var(--text);
+}
+
+.btn.ghost:hover {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+
+
+/* Navbar */
+/* Navbar */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(
+    to bottom,
+     rgba(15, 23, 42, 0.95),
+    rgba(15, 23, 42, 0.6),
+    transparent
+  );
+  border-bottom: 1px solid rgba(31, 41, 55, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.75rem;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #e5e7eb;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.navbar a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  transition: width 0.2s ease-out;
+}
+
+.navbar a:hover {
+  color: #e5e7eb;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Sections */
+
+.section {
+  margin: 4rem auto;
+  padding: 2.5rem 2rem;
+  background: radial-gradient(circle at top left, #111827, #020617);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(31, 41, 55, 0.95);
+  box-shadow: var(--shadow-card);
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.section p {
+  color: var(--muted);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: radial-gradient(circle at top left, #1d2333, #020617);
+}
+
+/* If you added animated background earlier, keep hero-bg on the section element */
+.hero.hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.hero-text .subtitle {
+  max-width: 430px;
+  text-align: justify;
+  color: var(--muted);
+}
+
+/* Typewriter line under the heading */
+.typewriter-line {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.05rem;
+}
+
+.subtitle-prefix {
+  color: var(--muted);
+}
+
+.typewriter-text {
+  color: #e5e7eb;
+  font-weight: 400;
+}
+
+/* Cursor color for most typewriter libraries */
+.typewriter-text .Typewriter__cursor {
+  color: #a5b4fc;
+}
+
+/* Tag + buttons + card remain same */
+
+.tag {
+  display: inline-block;
+  padding: 0.18rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+
+.hero-card {
+  background: radial-gradient(circle at top, #111827, #020617);
+  border-radius: 24px;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Optional floating animation if you want movement */
+.floating-card {
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+  }
+  50% {
+    transform: translateY(-8px) translateX(4px) scale(1.01);
+    box-shadow: 0 26px 60px rgba(79, 70, 229, 0.8);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+  }
+}
+
+.avatar-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  border: 2px solid rgba(148, 163, 184, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  background: radial-gradient(circle at top left, #1f2937, #020617);
+}
+
+.hero-location {
+  font-weight: 500;
+}
+
+.hero-status {
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+/* Mobile tweaks (optional) */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .typewriter-line {
+    font-size: 0.98rem;
+  }
+}
+
+
+/* Grid cards (projects) */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  margin-top: 1.3rem;
+}
+
+.card {
+  background: radial-gradient(circle at top left, #020617, #020617);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.3rem;
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.9);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+  border-color: rgba(79, 70, 229, 0.7);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  margin: 0.25rem 0;
+  text-align: justify;
+}
+
+.card .tech {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.card-links {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.card-links a {
+  color: #53cd76;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.card-links a:hover {
+  text-decoration: underline;
+}
+
+/* Skills */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.skills-column h3 {
+  margin-bottom: 0.6rem;
+}
+
+.skills-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-column li {
+  padding: 0.25rem 0;
+  color: var(--muted);
+}
+
+/* Footer */
+
+.footer {
+  max-width: 1080px;
+  margin: 0 auto 2rem;
+  padding: 1.25rem 1.5rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fcfdfe;
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer a {
+  color: #fcfdfe;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #e5e7eb;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .navbar nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding-top: 4.5rem;
+  }
+
+  .section {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .footer {
+    font-size: 18px;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+
+
+.arrow-icon {
+  font-size: 20px;
+  color: rgb(0, 255, 255);
+  margin:-1px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.back-to-top:hover .arrow-icon {
+  transform: translateY(-4px); /* smooth upward movement */
+  color: rgb(175, 220, 28);
+}
+
+
+
+
+.about-content {
+  display: grid;
+  margin: 100px -20% 1% 4%;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.about-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.section h3{
+  margin-top: -5px;
+}
+.about-article img {
+  width: 62px;
+}
